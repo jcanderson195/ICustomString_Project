@@ -25,6 +25,15 @@ namespace ICustomString_Project
             //Console.WriteLine("---------------");
             //newTest.Remove(0, 5);
 
+            SystemLinkedListString testing = new SystemLinkedListString();
+            testing.ToString();
+            Console.WriteLine("------------");
+            testing.Insert("C");
+            Console.WriteLine("-------------");
+            testing.Length();
+            Console.WriteLine("-------------");
+            testing.Remove(0, 4);
+
             Console.ReadKey();
         }
     }

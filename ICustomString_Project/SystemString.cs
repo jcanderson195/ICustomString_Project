@@ -36,7 +36,7 @@ namespace ICustomString_Project
 
         public void Remove(int startIndex, int numCharsToRemove)
         {
-            Console.WriteLine("Enter 7 digits to test remove function");
+            Console.WriteLine("Enter 7 characters to test remove function");
             Console.WriteLine("----------------------------");
             string digits = Console.ReadLine();
             Console.WriteLine(digits);
