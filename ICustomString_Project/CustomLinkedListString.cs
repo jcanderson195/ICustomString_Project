@@ -8,15 +8,24 @@ namespace ICustomString_Project
 {
     class CustomLinkedListString : ICustomString
     {
-        
-        //public override string ToString()
-        //{
-        //    //Node head = new Node()
-        //}
+
+        MyList list = new MyList();
+
+        public override string ToString()
+        {
+            
+            list.AddToEnd("J");
+            list.AddToEnd("S");
+            list.AddToEnd("T");
+
+            list.Print();
+
+            return "New Custom Linked List: " + list;
+        }
 
         public void Insert(string stringToInsert)
         {
-            throw new NotImplementedException();
+            list.AddToEnd(stringToInsert);
         }
 
         public int Length()

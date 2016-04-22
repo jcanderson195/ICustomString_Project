@@ -9,13 +9,15 @@ namespace ICustomString_Project
     class SystemLinkedListString : ICustomString
     {
         
-        public Node headNode;
+        
 
         public LinkedList<string> newLinkedList;
 
+        public string firstNode = "J";
+
         public SystemLinkedListString()
         {
-            headNode = null;
+           
             
             newLinkedList = new LinkedList<string>();
         }
@@ -23,55 +25,50 @@ namespace ICustomString_Project
 
         public override string ToString()
         {
-            AddToEnd("J");
-            AddToEnd("S");
-            AddToEnd("T");
+            newLinkedList.AddFirst(firstNode);
+            newLinkedList.AddLast("C");
+            newLinkedList.AddLast("A");
 
-            if (headNode != null)
+            foreach(string character in newLinkedList)
             {
-                headNode.Print();
+                Console.Write("|"+character+"|->");
             }
 
-            
-            return "Linked List: "+headNode;
+            return "Linked List" + newLinkedList;
+
         }
 
-        public void AddToEnd(string data)
-        {
-            if (headNode == null)
-            {
-                headNode = new Node(data);
-            }
-            else
-            {
-                headNode.Insert(data);
-            }
-        }
+        
 
         public void Insert(string stringToInsert)
         {
 
+            LinkedListNode<string> node = newLinkedList.Find(firstNode);
+            newLinkedList.AddAfter(node, stringToInsert);
 
-            headNode.Insert(stringToInsert);
-            
+            foreach (string character in newLinkedList)
+            {
+                Console.Write("|" + character + "|->");
+            }
 
         }
 
         public int Length()
         {
-            int value = newLinkedList.Count;
-            Console.WriteLine(value);
 
-            return value;
+            Console.WriteLine(newLinkedList.Count);
+            return newLinkedList.Count;
+            
         }
 
         public void Remove(int startIndex, int numCharsToRemove)
         {
+            
             newLinkedList.RemoveLast();
 
             foreach (String character in newLinkedList)
             {
-                Console.WriteLine(character);
+                Console.Write("|" + character + "|->");
             }
         }
     }
