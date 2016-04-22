@@ -8,18 +8,40 @@ namespace ICustomString_Project
 {
     class Node
     {
-        public int data;
+        public string data;
         public Node next;
 
-        List<string> list;
+        
 
-        public Node (int data)
+        public Node (string data)
         {
             this.data = data;
             this.next = null;
 
-            list = new List<string>();
+            
         }
+
+        public void Print()
+        {
+            Console.Write("|" +data+ "|->");
+            if (next != null)
+            {
+                next.Print();
+            }
+        }
+
+        public void Insert(string data)
+        {
+            if (next == null)
+            {
+                next = new Node(data);
+            }
+            else
+            {
+                next.Insert(data);
+            }
+        }
+
 
 
     }

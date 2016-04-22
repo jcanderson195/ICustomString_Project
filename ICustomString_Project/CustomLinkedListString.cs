@@ -8,6 +8,12 @@ namespace ICustomString_Project
 {
     class CustomLinkedListString : ICustomString
     {
+        
+        //public override string ToString()
+        //{
+        //    //Node head = new Node()
+        //}
+
         public void Insert(string stringToInsert)
         {
             throw new NotImplementedException();

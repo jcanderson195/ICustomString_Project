@@ -29,10 +29,11 @@ namespace ICustomString_Project
             testing.ToString();
             Console.WriteLine("------------");
             testing.Insert("C");
-            Console.WriteLine("-------------");
-            testing.Length();
-            Console.WriteLine("-------------");
-            testing.Remove(0, 4);
+            testing.headNode.Print();
+            //Console.WriteLine("-------------");
+            //testing.Length();
+            //Console.WriteLine("-------------");
+            //testing.Remove(0, 4);
 
             Console.ReadKey();
         }

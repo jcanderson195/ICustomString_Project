@@ -8,38 +8,53 @@ namespace ICustomString_Project
 {
     class SystemLinkedListString : ICustomString
     {
-
         
+        public Node headNode;
 
-        public LinkedList<string> newLinkedList = new LinkedList<string>();
+        public LinkedList<string> newLinkedList;
+
+        public SystemLinkedListString()
+        {
+            headNode = null;
+            
+            newLinkedList = new LinkedList<string>();
+        }
+        
 
         public override string ToString()
         {
-            newLinkedList.AddLast("T");
-            newLinkedList.AddLast("S");
-            newLinkedList.AddLast("U");
-            newLinkedList.AddFirst("J");
+            AddToEnd("J");
+            AddToEnd("S");
+            AddToEnd("T");
 
-            foreach(String character in newLinkedList)
+            if (headNode != null)
             {
-                Console.WriteLine(character.ToString());
+                headNode.Print();
             }
 
-            return "Item in LinkedList:  "+ newLinkedList.ToString();
             
+            return "Linked List: "+headNode;
+        }
 
+        public void AddToEnd(string data)
+        {
+            if (headNode == null)
+            {
+                headNode = new Node(data);
+            }
+            else
+            {
+                headNode.Insert(data);
+            }
         }
 
         public void Insert(string stringToInsert)
         {
-            
-            LinkedListNode<string> node = newLinkedList.Find("S");
-            newLinkedList.AddAfter(node, stringToInsert);
 
-            foreach(String character in newLinkedList)
-            {
-                Console.WriteLine(character);
-            }
+
+            headNode.Insert(stringToInsert);
+            
+
         }
 
         public int Length()
